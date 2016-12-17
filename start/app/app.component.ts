@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'pm-app',
     template: 
-    `<div>
+    `<div class='container'>
         <h1>{{pageTitle}}</h1>
-        <div>Our First App Component</div>
+        <pm-products>Loading-products...</pm-products>
     </div>`
 })
 export class AppComponent{
