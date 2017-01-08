@@ -9,11 +9,11 @@ import { ProductService } from './product.service';
     templateUrl:'product-list.component.html',
     styleUrls: ['product-list.component.css']
 })
-export class ProductListComponent implements OnInit{
+export class ProductListComponent implements OnInit {
     imageWidth: number = 50;
     pageTitle : string = 'Product List';
     showImage : boolean = false;
-    listFilter : string ;
+    listFilter : string;
     products: IProduct[];
     errorMessage : string;
 
@@ -21,8 +21,10 @@ export class ProductListComponent implements OnInit{
 
     ngOnInit(): void{
         this._productService.getProducts()
-            .subscribe( (data) => this.products = data,
-                    error => this.errorMessage = error);
+            .subscribe(
+                (data) => this.products = data,
+                (error) => this.errorMessage = error
+            );
     }
 
     toggleImage(): void{
